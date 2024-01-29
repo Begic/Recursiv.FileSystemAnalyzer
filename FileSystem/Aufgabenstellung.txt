@@ -1,0 +1,11 @@
+Aufgabenstellung zur rekursiven Analyse von Dateisystemen:
+
+Entwickeln Sie ein rekursives Programm zur Analyse eines Dateisystems, das die Anzahl der Dateien, die Anzahl der Verzeichnisse und den insgesamten Speicherplatz im Dateisystem berechnet.
+
+Die Funktion soll das angegebene Verzeichnis durchsuchen und rekursiv alle enthaltenen Dateien und Unterverzeichnisse analysieren. Sie soll dann die Anzahl der Dateien, die Anzahl der Verzeichnisse und den insgesamten Speicherplatz (in Bytes) zurückgeben.
+
+Denken Sie daran, dass Sie die Größe von Dateien berücksichtigen müssen, und Sie können annehmen, dass die Funktion auf die erforderlichen Berechtigungen zum Lesen aller Dateien und Verzeichnisse zugreifen kann.
+
+Erstellen Sie ein Testverzeichnis mit verschiedenen Dateien und Unterverzeichnissen und verwenden Sie Ihre Funktion, um die Analyse durchzuführen.
+
+Erweitern Sie Ihr Programm mit Testfälle, um sicherzustellen, dass Ihr Programm mit verschiedenen Dateigrößen, Verzeichnistiefen und -strukturen korrekt funktioniert.

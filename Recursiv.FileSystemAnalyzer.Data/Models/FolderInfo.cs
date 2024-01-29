@@ -10,10 +10,3 @@ public class FolderInfo
     public FolderInfo? ParentFolder { get; set; } = new();
     public FolderInfo? ChildFolder { get; set; } = new();
 }
-
-public class FileInfo
-{
-    public int Id { get; set; }
-    public string FileName { get; set; }
-    public byte[] FileSize { get; set; }
-}

@@ -8,5 +8,8 @@ public class FolderCrawler
         var startFiles = Directory.GetFiles(folderPath);
         
 
+
+
+
     }
 }

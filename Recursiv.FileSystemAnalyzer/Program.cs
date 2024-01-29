@@ -9,6 +9,6 @@ internal class Program
         var folderPath = "C:\\Users\\begic.SOFTWARE\\source\\repos\\Recursiv.FileSystemAnalyzer\\FileSystem";
 
         var crawler = new FolderCrawler();
-        crawler.StartCrawling(folderPath);
+        var folderStrucutre = crawler.StartCrawling(folderPath);
     }
 }

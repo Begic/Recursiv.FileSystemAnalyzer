@@ -8,36 +8,32 @@ public class FolderCrawler
     {
         var folderData = new FolderCrawlerInfo
         {
-            FolderName = Path.GetFileName(startfolderPath),
-            Files = new List<FileCrawlerInfo>(),
-            ChildFolder = new List<FolderCrawlerInfo>()
+            FolderName = Path.GetFileName(startfolderPath)
         };
 
-        if (parentFolderInfo != null)
-        {
-            folderData.ParentFolder = parentFolderInfo;
-        }
+        if (parentFolderInfo != null) folderData.ParentFolder = parentFolderInfo;
 
-        var folders = Directory.GetDirectories(startfolderPath);
-        var files = Directory.GetFiles(startfolderPath);
+        var newFolders = Directory.GetDirectories(startfolderPath);
+        var newFiles = Directory.GetFiles(startfolderPath);
 
-        foreach (var folderPath in folders)
-        {
-            folderData.ChildFolder.Add(StartCrawling(folderPath, folderData));
-        }
+        if (newFolders.Any()) folderData.ChildFolder = new List<FolderCrawlerInfo>();
 
-        foreach (var filePath in files)
+        if (newFiles.Any()) folderData.Files = new List<FileCrawlerInfo>();
+
+        foreach (var folderPath in newFolders) folderData?.ChildFolder?.Add(StartCrawling(folderPath, folderData));
+
+        foreach (var filePath in newFiles)
         {
             var fileInfo = new FileInfo(filePath);
 
-            folderData.Files.Add(new FileCrawlerInfo
+            folderData?.Files?.Add(new FileCrawlerInfo
             {
                 FileName = fileInfo.Name,
                 FileSize = fileInfo.Length / 1024
             });
         }
 
-        folderData.FolderSize = folderData.Files.Sum(x => x.FileSize);
+        if (folderData?.Files != null) folderData.FolderSize = folderData.Files.Sum(x => x.FileSize);
 
         return folderData;
     }

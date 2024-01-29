@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Recursiv.FileSystemAnalyzer.Data\Recursiv.FileSystemAnalyzer.Data.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -8,9 +8,14 @@ internal class Program
     {
         var folderPath = "C:\\Users\\begic.SOFTWARE\\source\\repos\\Recursiv.FileSystemAnalyzer\\TestFileSystem";
 
-        var crawler = new FolderCrawler();
         Console.WriteLine("Start Crawling");
+        
+        var crawler = new FolderCrawler();
         var folderStrucutre = crawler.StartCrawling(folderPath);
+        
         Console.WriteLine("Finish Crawling");
+
+        var structurRepresenter = new StructurRepresenter();
+        structurRepresenter.Display(folderStrucutre);
     }
 }
